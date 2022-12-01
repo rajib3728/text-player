@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>speed tester</title>
+    <link rel="shortcut icon" type="image/png" href="https://media.cntraveler.com/photos/5894f2ae6ce0e5bb7a6ec55c/master/pass/kuril-islands-russia-GettyImages-514932022.jpg">
+    <style>
+        body {
+               background-image: url('https://wallpaperset.com/w/full/c/8/0/239003.jpg');
+               background-repeat: no-repeat;
+               background-attachment: fixed;  
+               background-size: cover;
+             }
+
+     .st1
+    {
+        color:white;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .st2
+    {
+     width:50%;
+     height:200px;
+     background-color: aliceblue;
+     color: black;
+    }
+
+    .st3
+    {
+    width:25%;
+     height:200px;
+     background-color: aliceblue;
+     color: black; 
+     opacity: 0;
+    }
+    .st4
+    {
+   width: 50%;
+   height:200px;
+
+    }
+   .btn1
+   {
+    color:blueviolet;
+    background-color: aliceblue;
+    border-width: 2px;
+    border-color: blueviolet;
+    border-style: solid;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 20px;
+}
+.btn1:hover
+{
+    color:aliceblue;
+    background-color: blueviolet;
+    border-color:aliceblue;
+}
+    </style>         
+</head>
+<body>
+    <center>
+        <h1 class="st1">Speed tester</h1>
+        <div class="st2"> 
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae omnis voluptates repellendus sint. Reiciendis porro
+             libero error minima explicabo cum. Saepe molestias necessitatibus voluptatibus odio corporis perferendis repellendus 
+             veritatis officia praesentium libero. Quia et cupiditate atque,
+             ab aspernatur nam nulla labore rerum illum ut pariatur excepturi sunt facilis accusantium vitae?
+        </div>
+        <br>
+        <button class="btn1" onclick="fun1()">start</button>
+        <button class="btn1" onclick="fun2()" disabled>stop</button>
+        <button class="btn1"  onclick="fun3()" disabled>calculate speed</button>
+        <br>
+        <br>
+        <textarea placeholder="hello friend type above text here"  class="st4"></textarea>
+        <br>
+        <br>
+        <div class="st3">
+            <h1>Your result</h1>
+            <p id="t1"></p>
+            <p id="t2"></p>
+            <p id="t3"></p>
+            
+        </div>
+    </center>
+    <script>
+
+        function fun1()
+        {
+            var today = new Date();
+            var time = today.getHours() + " : " + today.getMinutes() + " : " + today.getSeconds();
+            document.getElementById("t1").innerHTML="start time: "+time;
+            document.getElementsByClassName("st3")[0].style.opacity=1;
+            document.getElementsByClassName("btn1")[1].disabled = false;
+        }
+        function fun2()
+        {   
+           var a="Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae omnis voluptates repellendus sint. Reiciendis porrolibero error minima explicabo cum. Saepe molestias necessitatibus voluptatibus odio corporis perferendis repellendus veritatis officia praesentium libero. Quia et cupiditate atque, ab aspernatur nam nulla labore rerum illum ut pariatur excepturi sunt facilis accusantium vitae?"
+           var b=document.getElementsByClassName("st4")[0].value; 
+           console.log(a.length)
+           console.log(b.length)
+           if(b.length>390)
+           {
+           var today = new Date();
+            var time = today.getHours() + " : " + today.getMinutes() + " : " +today.getSeconds();
+            document.getElementById("t2").innerHTML="end time: "+time;
+            document.getElementsByClassName("btn1")[2].disabled = false;
+           }
+           else
+           {
+            alert("text length not matching or missing")
+           }
+        }
+        function fun3()
+        {
+            var a1= document.getElementById("t1").innerText;
+            console.log(a1.split(" "))
+            var x=a1.split(" ")
+            var l1=[]
+            for( var i=0;i<x.length;i++)
+            {
+                if(parseInt(x[i]))
+                {
+                    l1.push(parseInt(x[i]))
+                }
+            }
+            console.log(l1)
+            var b1= document.getElementById("t2").innerText;
+            var y=b1.split(" ")
+            var l2=[]
+            for( var i=0;i<y.length;i++)
+            {
+                if(parseInt(y[i]))
+                {
+                    l2.push(parseInt(y[i]))
+                }
+            }
+            console.log(b1.split(" "))
+            console.log(l2)
+            var c=(l2[0]*3600+l2[1]*60+l2[2]-l1[0]*3600-l1[1]*60-l1[2])/60;
+            var res=50/c
+            document.getElementById("t3").innerHTML="your speed is:"+String(res)+" wpm(word per minute)"
+        }
+    </script>
+</body>
+</html>

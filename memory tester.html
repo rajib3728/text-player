@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory tester</title>
+    <link rel="shortcut icon" type="image/png" href="https://media.cntraveler.com/photos/5894f2ae6ce0e5bb7a6ec55c/master/pass/kuril-islands-russia-GettyImages-514932022.jpg">
+    <style>
+     body {
+            background-image: url('https://th.bing.com/th/id/R.0233af36a62f10689e987c01518af4ca?rik=ivWe3y9OnZLHCg&riu=http%3a%2f%2fwww.baltana.com%2ffiles%2fwallpapers-5%2fNature-Photoshop-Background-Best-Wallpaper-16407.jpeg&ehk=sEG34%2f61A9yWr9UeVRYz0X%2bA6U5imLcNQmAGhy2UZ4g%3d&risl=&pid=ImgRaw&r=0');
+            background-repeat: no-repeat;
+            background-attachment: fixed;  
+            background-size: cover;
+          }
+    .st1
+    {
+        color:white;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .st2
+    {
+    width: 670px;
+    height:300px;
+    background-color: rgba(255, 255, 255, 0.882);
+    border-radius: 20px;
+    margin-top: 50px;
+    }
+.st3
+{
+    width:20px;
+    height:20px;
+    padding: 10px;
+    box-shadow: 8px 8px 3px grey;
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    margin-left: 4px;
+    margin-right: 4px;
+    background-color: whitesmoke;
+}
+.st4
+{
+   width: 40%;
+   height:200px;
+   position: relative;
+   left:140px;
+   
+}
+.button {
+  display: inline-block;
+  padding: 15px 20px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.container
+{
+    width:270px;
+    height:250px;
+    background-color: white;
+    border-radius: 20px;
+    float:right;
+    opacity: 0;
+   
+}
+.res
+{
+    width:270px;
+    height:250px;
+    background-color: white;
+    border-radius: 20px;
+    opacity:0; 
+}
+    </style>
+</head>
+<body>
+   
+   <audio src="song8.mp3" class="ply" controls hidden></audio>
+ 
+    <center>
+        <h1 class="st1">Memory tester<button class="button" onclick="fun1()">Generate text</button><button onclick="fun11()" style="float:right ;"><img  src="https://static.vecteezy.com/system/resources/previews/000/441/796/original/vector-settings-icon.jpg" width="40px" height="40px" ></button></h1>
+        <div class="container">
+         <h1>settings</h1>
+         <label>select time(5s to 30s)</label>
+         <input type="range" max="30" min="5" step="5" id="inp1">
+         <br>
+         <label>select letter count(4 to 20)</label>
+         <input type="range" max="20" min="4" step="4" id="inp2">
+         <br>
+        </div>
+        <div>
+        <textarea placeholder="hello friend type your text here"  class="st4"></textarea>
+        </div>
+   
+        <button class="button" style="position:relative ; left:150px;" onclick="fun2()">submit</button>
+    <div class="st2">
+        <table>
+            
+        <tr>
+            <td><div class="st3">A</div></td>
+            <td><div class="st3">B</div></td>
+            <td><div class="st3">C</div></td>
+            <td><div class="st3">D</div></td>
+            <td><div class="st3">E</div></td>
+            <td><div class="st3">F</div></td>
+            <td><div class="st3">G</div></td>
+            <td><div class="st3">H</div></td>
+            <td><div class="st3">I</div></td>
+            <td><div class="st3">J</div></td>
+            <td><div class="st3">K</div></td>
+        </tr>
+        <tr>
+            <td><div class="st3">L</div></td>
+            <td><div class="st3">M</div></td>
+            <td><div class="st3">N</div></td>
+            <td><div class="st3">O</div></td>
+            <td><div class="st3">P</div></td>
+            <td><div class="st3">Q</div></td>
+            <td><div class="st3">R</div></td>
+            <td><div class="st3">S</div></td>
+            <td><div class="st3">T</div></td>
+            <td><div class="st3">U</div></td>
+            <td><div class="st3">V</div></td>
+        </tr>
+        <tr>
+            <td><div class="st3">W</div></td>
+            <td><div class="st3">X</div></td>
+            <td><div class="st3">Y</div></td>
+            <td><div class="st3">Z</div></td>  
+        </tr>
+        <tr>
+            <td><div class="st3">0</div></td>
+            <td><div class="st3">1</div></td>
+            <td><div class="st3">2</div></td>
+            <td><div class="st3">3</div></td>
+            <td><div class="st3">4</div></td>
+            <td><div class="st3">5</div></td>
+            <td><div class="st3">6</div></td>
+            <td><div class="st3">7</div></td>
+            <td><div class="st3">8</div></td>
+            <td><div class="st3">9</div></td>
+        </tr>
+        </table>
+        </div>
+
+
+
+        <div class="res">
+            <h1>View result</h1>
+            <label>computer generated:</label>
+         <p id="res1"></p>
+         <label>your input:</label>
+         <p id="res2"></p>
+        </div>
+    </center>
+   
+   <script>
+    function hello()
+       {
+        var m=document.getElementsByClassName("st3");
+        var i;
+        for (i = 0; i < m.length; i++) {
+          m[i].style.backgroundColor= "whitesmoke";
+         }
+       }
+    var n=document.getElementsByClassName("ply")
+    window.addEventListener("keydown",(event)=>{
+    if(event.key=='a' || event.key=='A'){
+        n[0].play()
+        document.getElementsByClassName("st3")[0].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+    else if(event.key=='b' || event.key=='B'){
+        n[0].play()
+        document.getElementsByClassName("st3")[1].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+    else if(event.key=='C' || event.key=='c'){
+        n[0].play()
+        document.getElementsByClassName("st3")[2].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+    else if(event.key=='d' || event.key=='D'){
+        n[0].play()
+        document.getElementsByClassName("st3")[3].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+    else if(event.key=='E' || event.key=='e'){
+        n[0].play()
+        document.getElementsByClassName("st3")[4].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+    else if(event.key=='f' || event.key=='F'){
+        n[0].play()
+        document.getElementsByClassName("st3")[5].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+    else if(event.key=='G' || event.key=='g'){
+        n[0].play()
+        document.getElementsByClassName("st3")[6].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+    else if(event.key=='h' || event.key=='H'){
+        n[0].play()
+        document.getElementsByClassName("st3")[7].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+    else if(event.key=='I' || event.key=='i'){
+        n[0].play()
+        document.getElementsByClassName("st3")[8].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+    else if(event.key=='j' || event.key=='J'){
+        n[0].play()
+        document.getElementsByClassName("st3")[9].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+    else if(event.key=='K' || event.key=='k'){
+        n[0].play()
+        document.getElementsByClassName("st3")[10].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+    else if(event.key=='l' || event.key=='L'){
+        n[0].play()
+        document.getElementsByClassName("st3")[11].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+    else if(event.key=='M' || event.key=='m'){
+        n[0].play()
+        document.getElementsByClassName("st3")[12].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+    else if(event.key=='n' || event.key=='N'){
+        n[0].play()
+        document.getElementsByClassName("st3")[13].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+    else if(event.key=='O' || event.key=='o'){
+        n[0].play()
+        document.getElementsByClassName("st3")[14].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+    else if(event.key=='p' || event.key=='P'){
+        n[0].play()
+        document.getElementsByClassName("st3")[15].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+    else if(event.key=='Q' || event.key=='q'){
+        n[0].play()
+        document.getElementsByClassName("st3")[16].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+    else if(event.key=='r' || event.key=='R'){
+        n[0].play()
+        document.getElementsByClassName("st3")[17].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+    else if(event.key=='s' || event.key=='S'){
+        n[0].play()
+        document.getElementsByClassName("st3")[18].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+    else if(event.key=='T' || event.key=='t'){
+        n[0].play()
+        document.getElementsByClassName("st3")[19].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+    else if(event.key=='u' || event.key=='U'){
+        n[0].play()
+        document.getElementsByClassName("st3")[20].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+    else if(event.key=='V' || event.key=='v'){
+        n[0].play()
+        document.getElementsByClassName("st3")[21].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+    else if(event.key=='W' || event.key=='w'){
+        n[0].play()
+        document.getElementsByClassName("st3")[22].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+    else if(event.key=='x' || event.key=='X'){
+        n[0].play()
+        document.getElementsByClassName("st3")[23].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+    else if(event.key=='y' || event.key=='Y'){
+        n[0].play()
+        document.getElementsByClassName("st3")[24].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+    else if(event.key=='z' || event.key=='Z'){
+        n[0].play()
+        document.getElementsByClassName("st3")[25].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+    else if(event.key==0 && event.key!=="Backspace"){
+        n[0].play()
+        document.getElementsByClassName("st3")[26].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+    else if(event.key==1){
+        n[0].play()
+        document.getElementsByClassName("st3")[27].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+    else if(event.key==2){
+        n[0].play()
+        document.getElementsByClassName("st3")[28].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+    else if(event.key==3){
+        n[0].play()
+        document.getElementsByClassName("st3")[29].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+    else if(event.key==4){
+        n[0].play()
+        document.getElementsByClassName("st3")[30].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+    else if(event.key==5){
+        n[0].play()
+        document.getElementsByClassName("st3")[31].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+    else if(event.key==6){
+        n[0].play()
+        document.getElementsByClassName("st3")[32].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+    else if(event.key==7){
+        n[0].play()
+        document.getElementsByClassName("st3")[33].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+    else if(event.key==8){
+        n[0].play()
+        document.getElementsByClassName("st3")[34].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+    else if(event.key==9){
+        n[0].play()
+        document.getElementsByClassName("st3")[35].style.backgroundColor="orange";
+        setTimeout(hello,200);
+    }
+}
+)
+
+
+
+
+function randomString() {  
+            //define a variable consisting alphabets in small and capital letter  
+    var characters = "ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";  
+              
+            //specify the length for the new string  
+    var lenString = document.getElementById("inp2").value; 
+     
+    var randomstring = '';  
+  
+            //loop to select a new character in each iteration  
+    for (var i=0; i<lenString; i++) {  
+        var rnum = Math.floor(Math.random() * characters.length);  
+        randomstring += characters.substring(rnum, rnum+1);  
+    }  
+    return randomstring
+             //display the generated string   
+    
+}  
+function hidetext(){
+    document.getElementsByClassName("st4")[0].innerHTML="";
+}
+
+ 
+function fun1()
+{   
+    var x=randomString();  
+    console.log(x);
+    document.getElementById("res1").innerHTML=x;
+    document.getElementsByClassName("st4")[0].innerHTML=x;
+    var tm= document.getElementById("inp1").value;
+    setTimeout(hidetext,tm*1000);
+
+    
+}
+function hi()
+{
+    document.getElementsByClassName("res")[0].style.opacity=0;
+}
+
+function fun2()
+{
+    var y=document.getElementsByClassName("st4")[0].value;
+    document.getElementsByClassName("res")[0].style.opacity=1;
+    document.getElementById("res2").innerHTML=y
+    alert("please scroll");
+    setTimeout(hi,10000);
+}
+
+
+
+     let isplay=false;
+        function fun22()
+        {
+            document.getElementsByClassName("container")[0].style.opacity=1;
+            isplay=true;
+        }
+        function fun33()
+        {
+            document.getElementsByClassName("container")[0].style.opacity=0;
+            isplay=false;
+            
+        }
+        function fun11()
+        {
+           if(isplay)
+           {
+               fun33();
+           }
+           else{
+               fun22();
+           }
+        }
+
+   </script> 
+</body>
+</html>
